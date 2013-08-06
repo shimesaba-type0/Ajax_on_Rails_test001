@@ -1,0 +1,130 @@
+have_func: checking for rb_thread_blocking_region()... -------------------- yes
+
+"cc -o conftest -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -Wl,-R/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L. -L'/home/shimesaba/.rbenv/versions/1.9.3-p125/lib'  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main() {return 0;}
+/* end */
+
+"cc -o conftest -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -Wl,-R/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L. -L'/home/shimesaba/.rbenv/versions/1.9.3-p125/lib'  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))rb_thread_blocking_region; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_wait_for_single_fd()... -------------------- yes
+
+"cc -o conftest -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -Wl,-R/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L. -L'/home/shimesaba/.rbenv/versions/1.9.3-p125/lib'  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘rb_wait_for_single_fd’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))rb_wait_for_single_fd; return 0; }
+/* end */
+
+"cc -o conftest -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -Wl,-R/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L. -L'/home/shimesaba/.rbenv/versions/1.9.3-p125/lib'  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘rb_wait_for_single_fd’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { rb_wait_for_single_fd(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_hash_dup()... -------------------- yes
+
+"cc -o conftest -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -Wl,-R/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L. -L'/home/shimesaba/.rbenv/versions/1.9.3-p125/lib'  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))rb_hash_dup; return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for rb_intern3()... -------------------- yes
+
+"cc -o conftest -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -Wl,-R/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L. -L'/home/shimesaba/.rbenv/versions/1.9.3-p125/lib'  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:53: エラー: ‘rb_intern3’ が宣言されていません (この関数内での最初の使用)
+conftest.c:5:53: 備考: 未宣言の識別子は出現した各関数内で一回のみ報告されます
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { void ((*volatile p)()); p = (void ((*)()))rb_intern3; return 0; }
+/* end */
+
+"cc -o conftest -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration conftest.c  -L. -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -Wl,-R/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L. -L'/home/shimesaba/.rbenv/versions/1.9.3-p125/lib'  -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -L/home/shimesaba/.rbenv/versions/1.9.3-p125/lib -lruby-static  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+conftest.c: 関数 ‘t’ 内:
+conftest.c:5:1: 警告: 関数 ‘rb_intern3’ の暗黙的な宣言です [-Wimplicit-function-declaration]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main() {return 0;}
+5: int t() { rb_intern3(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for mysql.h... -------------------- yes
+
+"cc -E -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'  -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing  -g  -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysql.h>
+/* end */
+
+--------------------
+
+have_header: checking for errmsg.h... -------------------- yes
+
+"cc -E -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'  -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing  -g  -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <errmsg.h>
+/* end */
+
+--------------------
+
+have_header: checking for mysqld_error.h... -------------------- yes
+
+"cc -E -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/x86_64-linux -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1/ruby/backward -I/home/shimesaba/.rbenv/versions/1.9.3-p125/include/ruby-1.9.1 -I. -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'   -I'/home/shimesaba/.rbenv/versions/1.9.3-p125/include'  -I/usr/include/mysql -DBIG_JOINS=1  -fno-strict-aliasing  -g  -O3 -ggdb -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <mysqld_error.h>
+/* end */
+
+--------------------
+
