@@ -1,5 +1,10 @@
 AjaxOnRailsTest001::Application.routes.draw do
+  get "hello_world/index"
+
   resources :users
+
+  get "say_hello/hello_world"
+  post "say_hello/hello_world"
 
 
   # The priority is based upon order of creation:
